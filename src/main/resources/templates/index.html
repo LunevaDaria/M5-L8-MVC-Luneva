@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Players</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<table class="table table-stripped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>title</th>
+        <th>race</th>
+        <th>profession</th>
+        <th>birthday</th>
+        <th>banned</th>
+        <th>experience</th>
+        <th>level</th>
+        <th>until Next Level</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="player : ${players}">
+        <td th:text="${player.id}"></td>
+        <td>
+            <a th:href="@{'/players/' + ${player.id}}" th:text="${player.name}"></a>
+        </td>
+        <td th:text="${player.title}"></td>
+        <td th:text="${player.race}"></td>
+        <td th:text="${player.profession}"></td>
+        <td th:text="${player.birthday}"></td>
+        <td th:text="${player.banned}"></td>
+        <td th:text="${player.experience}"></td>
+        <td th:text="${player.level}"></td>
+        <td th:text="${player.untilNextLevel}"></td>
+
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
